@@ -1,65 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hongbin Cui | 崔洪斌</title>
-
+  <meta name="description" content="Hongbin Cui's academic homepage. Differential geometry, geometric analysis, minimal submanifolds, and area-minimizing cones.">
+  <title>Hongbin Cui (崔洪斌)</title>
+  <link rel="canonical" href="https://hongbincui.github.io/">
   <style>
-    body {
-      max-width: 900px;
-      margin: 45px auto;
-      padding: 0 24px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 18px;
-      line-height: 1.7;
-      color: #222;
-      background: white;
+    :root { color-scheme: light; --blue: #244f85; --ink: #222; --rule: #d4d9df; }
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 1.5rem; }
+    body { margin: 0; color: var(--ink); background: #fff; font-family: Georgia, "Times New Roman", "Songti SC", SimSun, serif; font-size: 1.0625rem; line-height: 1.62; }
+    a { color: var(--blue); text-decoration: none; text-underline-offset: 3px; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+    .skip-link { position: absolute; top: -5rem; left: 1rem; padding: .5rem; background: #fff; }
+    .skip-link:focus { top: .5rem; }
+    .layout { display: grid; grid-template-columns: 175px minmax(0, 1fr); max-width: 1180px; min-height: 100vh; margin: 0 auto; }
+    aside { padding: 2.5rem 1.2rem; background: #f5f6f8; border-right: 1px solid var(--rule); }
+    nav { position: sticky; top: 2rem; }
+    .menu-title { margin: 0 0 .65rem; padding-bottom: .4rem; border-bottom: 1px solid var(--rule); font-weight: bold; }
+    nav ul { list-style: none; margin: 0; padding: 0; }
+    nav li { margin: .4rem 0; }
+    nav a { display: inline-block; padding: .16rem 0; }
+    main { min-width: 0; padding: 2rem 2.8rem 2.5rem; }
+    h1 { margin: 0 0 1.15rem; padding-bottom: .45rem; border-bottom: 2px solid var(--rule); color: var(--blue); font-size: 2rem; line-height: 1.3; }
+    h1 span { white-space: nowrap; font-weight: normal; font-size: .85em; }
+    h2 { margin: 1.9rem 0 .75rem; padding-bottom: .2rem; border-bottom: 1px solid var(--rule); color: var(--blue); font-size: 1.4rem; line-height: 1.4; }
+    h3 { margin: 1.1rem 0 .65rem; font-size: 1.1rem; }
+    p { margin: .65rem 0; }
+    .contact { line-height: 1.7; }
+    .contact a { overflow-wrap: anywhere; }
+    .papers { padding-left: 1.35rem; margin: .5rem 0; }
+    .papers li { padding-left: .15rem; margin-bottom: 1rem; }
+    .paper-title { font-style: italic; }
+    .paper-links { display: inline; white-space: normal; }
+    .paper-links a { white-space: nowrap; }
+    .teaching { padding-left: 1.35rem; }
+    .teaching li { margin-bottom: .5rem; }
+    footer { margin-top: 2.6rem; padding-top: .7rem; border-top: 1px solid var(--rule); color: #606873; font-size: .875rem; }
+    @media (max-width: 720px) {
+      .layout { display: block; }
+      aside { padding: .8rem 1.2rem; border-right: 0; border-bottom: 1px solid var(--rule); }
+      nav { position: static; }
+      .menu-title { display: none; }
+      nav ul { display: flex; flex-wrap: wrap; gap: .2rem 1.2rem; }
+      nav li { margin: 0; }
+      main { padding: 1.5rem 1.2rem 2rem; }
+      h1 { font-size: 1.75rem; }
     }
-
-    h1, h2 {
-      color: #254b78;
-    }
-
-    h1 {
-      font-size: 32px;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 12px;
-    }
-
-    h2 {
-      font-size: 23px;
-      margin-top: 32px;
-      border-bottom: 1px solid #ddd;
-    }
-
-    a {
-      color: #245b99;
+    @media print {
+      .layout { display: block; }
+      aside, .skip-link { display: none; }
+      main { padding: 0; }
+      a { color: inherit; }
+      h2, h3 { break-after: avoid; }
+      .papers li { break-inside: avoid; }
     }
   </style>
 </head>
-
 <body>
-  <h1>Hongbin Cui (崔洪斌)</h1>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="layout">
+    <aside>
+      <nav aria-label="Main navigation">
+        <p class="menu-title">Menu</p>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#teaching">Teaching</a></li>
+          <li><a href="#links">Links</a></li>
+        </ul>
+      </nav>
+    </aside>
 
-  <h2>About me</h2>
-  <p>
-    My research interests lie in differential geometry and
-    geometric analysis, with a particular focus on minimal
-    submanifolds and area-minimizing cones.
-  </p>
+    <main id="main">
+      <!-- 姓名、单位和邮箱：以后可直接修改这一部分。 -->
+      <header id="home">
+        <h1>Hongbin Cui <span lang="zh-CN">(崔洪斌)</span></h1>
+        <p class="contact">
+          <a href="https://math.ustc.edu.cn/">School of Mathematical Sciences</a><br>
+          <a href="https://en.ustc.edu.cn/">University of Science and Technology of China</a><br>
+          96 Jinzhai Road, Hefei, Anhui 230026, China<br>
+          Email: <a href="mailto:cuihongbin@ustc.edu.cn">cuihongbin@ustc.edu.cn</a>
+        </p>
+      </header>
 
-  <h2>Research interests</h2>
-  <ul>
-    <li>Minimal submanifolds and area-minimizing cones</li>
-    <li>Stability and calibration methods</li>
-    <li>Isoparametric geometry and algebraic constructions</li>
-  </ul>
+      <section aria-labelledby="about">
+        <h2 id="about">About me</h2>
+        <p>
+          I am a Distinguished Associate Researcher at the University of Science and
+          Technology of China (USTC). From 2022 to 2024, I was a postdoctoral researcher
+          at USTC, working with Prof. Xiaowei Xu. I received my Ph.D. from the University
+          of Chinese Academy of Sciences in 2022 under the supervision of Prof. Xiaoxiang Jiao.
+        </p>
+        <p>
+          My research interests are in differential geometry, geometric analysis, and
+          geometric measure theory, particularly minimal submanifolds and area-minimizing
+          cones. I study stability and area minimization using calibrations,
+          subcalibrations, and Lawlor's curvature criterion, as well as their connections
+          with isoparametric geometry and algebraic structures. I am also interested in
+          weighted geometric variational problems and minimal two-spheres in projective spaces.
+        </p>
+      </section>
 
-  <h2>Publications and Preprints</h2>
-  <p>To be updated.</p>
+      <section aria-labelledby="publications">
+        <h2 id="publications">Publications and Preprints</h2>
 
-  <h2>Teaching</h2>
-  <p>To be updated.</p>
+        <!-- 预印本：每个 li 是一篇文章。正式发表后可移到 Published papers。 -->
+        <h3>Preprints</h3>
+        <ul class="papers">
+          <li>
+            Hongbin Cui, Xiaoxiang Jiao, Hangyue Zhu.
+            <span class="paper-title">Real Determinantal and Segre Varieties: Stability and Area Minimization.</span>
+            Preprint (2026).
+            <span class="paper-links">[<a href="https://arxiv.org/abs/2611.23980">arXiv:2611.23980</a>]</span>
+          </li>
+          <li>
+            Hongbin Cui, Xiaowei Xu, Shoulan Yi.
+            <span class="paper-title">Curvature estimates for stable hypersurfaces of the Euler–Dierkes–Huisken functional.</span>
+            Preprint (2026).
+            <span class="paper-links">[<a href="https://arxiv.org/abs/2611.10597">arXiv:2611.10597</a>]</span>
+          </li>
+          <li>
+            Hongbin Cui.
+            <span class="paper-title">Lawlor's curvature criterion and topologically trivial area-minimizing hypercones of Hsiang type.</span>
+            Preprint (2026).
+            <span class="paper-links">[<a href="https://arxiv.org/abs/2610.31341">arXiv:2610.31341</a>]</span>
+          </li>
+          <li>
+            Hongbin Cui.
+            <span class="paper-title">Laplacian Algebras and Subcalibrations for Minimal Hypercones.</span>
+            Preprint (2026).
+            <span class="paper-links">[<a href="https://arxiv.org/abs/2609.17217">arXiv:2609.17217</a>]</span>
+          </li>
+          <li>
+            Hongbin Cui, Shuping Huang.
+            <span class="paper-title">The Morse Index, Nullity and Jacobi Fields of Constant-Curvature 2-Spheres in Complex Projective Spaces.</span>
+            Preprint (2026).
+            <span class="paper-links">[<a href="https://arxiv.org/abs/2609.00922">arXiv:2609.00922</a>]</span>
+          </li>
+          <li>
+            Hongbin Cui, Jiahuan Li, Xiaowei Xu.
+            <span class="paper-title">Bernstein-type theorem for stationary hypersurfaces of the Euler–Dierkes–Huisken functional.</span>
+            Preprint (2026).
+            <span class="paper-links">[<a href="https://arxiv.org/abs/2606.30008">arXiv:2606.30008</a>]</span>
+          </li>
+          <li>
+            Hongbin Cui.
+            <span class="paper-title">On FKM isoparametric hypersurfaces in S<sup>n</sup> × S<sup>n</sup> and new area-minimizing cones.</span>
+            Preprint (2025; revised 2026).
+            <span class="paper-links">[<a href="https://arxiv.org/abs/2510.14650">arXiv:2510.14650</a>]</span>
+          </li>
+        </ul>
+
+        <!-- 已发表论文：作者顺序与正式发表版本一致。 -->
+        <h3>Published papers</h3>
+        <ul class="papers">
+          <li>
+            Hongbin Cui.
+            <span class="paper-title">A family of area-minimizing tensor varieties.</span>
+            Proc. Amer. Math. Soc. <strong>154</strong> (2026), 4233–4244.
+            <span class="paper-links">[<a href="https://doi.org/10.1090/proc/17780">journal</a>]
+            [<a href="https://arxiv.org/abs/2607.10157">arXiv:2607.10157</a>]</span>
+          </li>
+          <li>
+            Hongbin Cui, Qing Chen.
+            <span class="paper-title">On Euler–Dierkes–Huisken variational problem II: Stationary Lagrangian graphs and minimizing cones.</span>
+            J. Differential Equations <strong>453</strong> (2026), 113916.
+            <span class="paper-links">[<a href="https://doi.org/10.1016/j.jde.2025.113916">journal</a>]</span>
+          </li>
+          <li>
+            Hongbin Cui, Xiaowei Xu.
+            <span class="paper-title">On Euler–Dierkes–Huisken variational problem.</span>
+            Math. Ann. <strong>391</strong> (2025), 2087–2120.
+            <span class="paper-links">[<a href="https://doi.org/10.1007/s00208-024-02970-1">journal</a>]
+            [<a href="https://arxiv.org/abs/2404.05132">arXiv:2404.05132</a>]</span>
+          </li>
+          <li>
+            Hongbin Cui, Xiaoxiang Jiao, Lijia Liu.
+            <span class="paper-title">Area-Minimizing Cones Over Products of Symmetric R-spaces.</span>
+            J. Geom. Anal. <strong>35</strong> (2025), 116.
+            <span class="paper-links">[<a href="https://doi.org/10.1007/s12220-025-01943-3">journal</a>]</span>
+          </li>
+          <li>
+            Hongbin Cui, Xiaoxiang Jiao, Xiaowei Xu.
+            <span class="paper-title">On area-minimizing Pfaffian varieties.</span>
+            J. Funct. Anal. <strong>286</strong> (2024), 110318.
+            <span class="paper-links">[<a href="https://doi.org/10.1016/j.jfa.2024.110318">journal</a>]
+            [<a href="https://arxiv.org/abs/2305.06517">arXiv:2305.06517</a>]</span>
+          </li>
+          <li>
+            Xiaoxiang Jiao, Hongbin Cui, Jialin Xin.
+            <span class="paper-title">Area-minimizing cones over products of Grassmannian manifolds.</span>
+            Calc. Var. Partial Differential Equations <strong>61</strong> (2022), 205.
+            <span class="paper-links">[<a href="https://doi.org/10.1007/s00526-022-02309-1">journal</a>]</span>
+          </li>
+          <li>
+            Xiaoxiang Jiao, Hongbin Cui.
+            <span class="paper-title">Area-Minimizing Cones Over Grassmannian Manifolds.</span>
+            J. Geom. Anal. <strong>32</strong> (2022), 224.
+            <span class="paper-links">[<a href="https://doi.org/10.1007/s12220-022-00963-7">journal</a>]</span>
+          </li>
+          <li>
+            Xiaoxiang Jiao, Hongbin Cui.
+            <span class="paper-title">Construction of Conformal Minimal Two-Spheres in Quaternionic Projective Spaces by Twistor Map.</span>
+            J. Geom. Anal. <strong>31</strong> (2021), 888–912.
+            <span class="paper-links">[<a href="https://doi.org/10.1007/s12220-019-00305-0">journal</a>]</span>
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="teaching">
+        <h2 id="teaching">Teaching</h2>
+        <p>School of Mathematical Sciences, University of Science and Technology of China</p>
+        <ul class="teaching">
+          <li><strong>Topics in Geometric Analysis</strong> — graduate course; two semesters.</li>
+          <li><strong>Differential Geometry</strong> — undergraduate course; one semester.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="links">
+        <h2 id="links">Links</h2>
+        <p>
+          <a href="https://faculty.ustc.edu.cn/cuihongbin1/en/index.htm">USTC profile</a>
+          &nbsp;·&nbsp;
+          <a href="https://orcid.org/0000-0003-3393-8583">ORCID</a>
+        </p>
+      </section>
+
+      <!-- 内容更新后，可手动修改下方日期。 -->
+      <footer>Last updated: November 23, 2026.</footer>
+    </main>
+  </div>
 </body>
 </html>
