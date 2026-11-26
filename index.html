@@ -204,13 +204,26 @@
 <p>For δ &lt; π/3, the symmetric minimizer satisfies r³ cos(3θ) = cos(3δ/2), with −δ/2 ≤ θ ≤ δ/2. Here θ is measured from the angle bisector. The minimum energy is (2/3) sin(3δ/2). For δ ≥ π/3, it is 2/3.</p>
 <p>The change of variables ρ = r³/3, φ = 3θ turns the weighted line element into the Euclidean line element on a flat cone of total angle 6π. The angular coordinate must remain unwrapped; identifying it modulo 2π would give incorrect minimizers.</p>
 </details>
-<p>My research studies higher-dimensional weighted area problems, including the stability and minimizing properties of cones: <a href="https://doi.org/10.1007/s00208-024-02970-1">Cui–Xu, <i>Mathematische Annalen</i> (2025)</a>.</p>
+<p><strong>Area minimization in a cone.</strong> Frank Morgan’s <a href="https://doi.org/10.4310/CAG.2002.v10.n5.a3"><i>Area-minimizing Surfaces in Cones</i> (2002)</a> studies how dimension and cone opening govern whether minimizers can pass through a conical singularity. In acute round cones, minimizers of dimensions one and two in positive codimension avoid the vertex when their boundary avoids it; from dimension three onward, they may pass through it. Power-weighted area connects directly to this geometry through a radial change of variables.</p>
+<details><summary>Morgan’s cone metric and the connection to weighted area</summary>
+<p>For a k-dimensional surface and α &gt; −k, set β = 1 + α/k and ρ = r<sup>β</sup>/β, where r = |x|. Away from the origin, the conformal metric</p>
+<p class="equation">g<sub>α</sub> = r<sup>2α/k</sup>(dr² + r² dΩ²) = dρ² + β²ρ² dΩ²</p>
+<p>has area element dA<sub>gα</sub> = r<sup>α</sup> dA. Thus power-weighted area becomes ordinary area in a round cone metric. Here dΩ² is the standard sphere metric. Mason’s model has k = 1, α = 2 and β = 3, giving total cone angle 6π; β denotes the metric parameter, while δ above denotes the angle between the endpoints.</p>
+<p>For 0 &lt; β &lt; 1 and ambient dimension N &gt; k, Morgan’s Theorem 3.1 says that a k-plane through the vertex is area-minimizing precisely when</p>
+<p class="equation">k ≥ 3 &nbsp; and &nbsp; β² ≥ 4(k − 1)/k².</p>
+<p>His proof adapts Lawlor’s construction of an area-nonincreasing retraction. Proposition 3.3 gives the sharp criterion β² ≥ 16m/(2m + 1)² for the symmetric Simons cone C<sub>m</sub> = { (x, y) ∈ ℝ<sup>m+1</sup> × ℝ<sup>m+1</sup> : |x| = |y| }, where m ≥ 1 and k = 2m + 1. Substituting β = 1 + α/k yields</p>
+<p class="equation">α ≥ 4√m − 2m − 1, &nbsp; for α &gt; −(2m + 1).</p>
+<p>This reformulation of Morgan’s criterion is also the sharp threshold established by directed slicing for power-weighted area in Cui–Chen (2026), linked below.</p>
+</details>
+<p>My research studies higher-dimensional weighted area problems, including the stability and minimizing properties of cones: <a href="https://doi.org/10.1007/s00208-024-02970-1">Cui–Xu, <i>Mathematische Annalen</i> (2025)</a> and <a href="https://doi.org/10.1016/j.jde.2025.113916">Cui–Chen, <i>Journal of Differential Equations</i> (2026)</a>.</p>
 <details><summary>Mathematical references and image credits</summary>
 <ul class="visual-references">
 <li>M. Mason, <i>Curves of Minimum Moment of Inertia with Respect to a Point</i>, Annals of Mathematics 7 (1906), 165–172. <a href="https://www.jstor.org/stable/1967249">Original paper</a>.</li>
+<li>F. Morgan, <i>Area-minimizing Surfaces in Cones</i>, Communications in Analysis and Geometry 10 (2002), 971–983, Theorem 3.1, Corollary 3.2 and Proposition 3.3. <a href="https://doi.org/10.4310/CAG.2002.v10.n5.a3">Journal</a> · <a href="https://intlpress.com/site/pub/files/_fulltext/journals/cag/2002/0010/0005/CAG-2002-0010-0005-a003.pdf">PDF</a>.</li>
 <li>U. Dierkes and G. Huisken, <i>The n-dimensional analogue of a variational problem of Euler</i>, Math. Ann. 389 (2024), 3841–3863. <a href="https://doi.org/10.1007/s00208-023-02726-3">Journal</a>.</li>
 <li>U. Dierkes and R. López, <i>Axisymmetric stationary surfaces for the moment of inertia</i> (2026), introduction. <a href="https://doi.org/10.1017/prm.2025.10110">Journal</a>.</li>
 <li>H. Cui and X. Xu, <i>On Euler–Dierkes–Huisken variational problem</i>, Math. Ann. 391 (2025), 2087–2120. <a href="https://arxiv.org/abs/2404.05132">arXiv</a>.</li>
+<li>H. Cui and Q. Chen, <i>On Euler–Dierkes–Huisken variational problem II: Stationary Lagrangian graphs and minimizing cones</i>, Journal of Differential Equations 453 (2026), 113916. <a href="https://doi.org/10.1016/j.jde.2025.113916">Journal</a>.</li>
 <li><a href="https://www.maths.cam.ac.uk/features/less-more-quest-minimal-surfaces">University of Cambridge: soap films and minimal surfaces</a>.</li>
 <li>Photographic sources are linked under each photograph. The regional map uses DataV.GeoAtlas / AMap administrative boundaries and OpenStreetMap river geometry, aligned to the boundary data’s coordinate system. It displays prefecture-level divisions and selected river reaches, omitting upper reaches, diversion channels and minor tributaries. Xiping is marked as a county town within Zhumadian. River connections were cross-checked against <a href="https://www.chinawater.com.cn/df/hn/202310/t20231028_872074.html">China Water</a>. The mathematical diagrams were drawn from explicit formulas for this page.</li>
 </ul></details>
@@ -341,7 +354,7 @@
       </section>
 
       <!-- 内容更新后，可手动修改下方日期。 -->
-      <footer>Last updated: November 25, 2026.</footer>
+      <footer>Last updated: November 26, 2026.</footer>
     </main>
   </div>
 <script>
