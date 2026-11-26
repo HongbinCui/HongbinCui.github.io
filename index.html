@@ -57,7 +57,36 @@
       h2, h3 { break-after: avoid; }
       .papers li { break-inside: avoid; }
     }
-  </style>
+  
+.visual-section { margin: 1.6rem 0 2.1rem; }
+.visual-intro { max-width: 70ch; }
+.visual-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.25rem; margin:1.1rem 0; }
+.visual-card { margin:0; min-width:0; }
+.visual-frame { display:flex; width:100%; aspect-ratio:3/2; overflow:hidden; background:#f3f7fa; border:1px solid #dbe3ea; align-items:center; justify-content:center; }
+.visual-frame img { display:block; width:100%; height:100%; object-fit:contain; }
+.visual-frame:hover { border-color:#244f85; }
+.visual-card h3 { font-size:1.08rem; line-height:1.4; margin:.65rem 0 .35rem; color:#244f85; }
+.visual-card p { font-size:.95rem; line-height:1.55; margin:.35rem 0; }
+.visual-card .credit { font-size:.79rem; color:#606873; line-height:1.45; margin-top:.55rem; }
+.visual-card .credit a { color:#596c80; text-decoration:underline; }
+.visual-section .math-note { padding:.75rem 1rem; border-left:3px solid #8eaec6; background:#f6f8fb; font-size:.95rem; line-height:1.6; }
+.visual-section .equation { text-align:center; color:#244f85; font-size:1.15rem; margin:1rem 0; }
+.visual-section details { border-top:1px solid #d4d9df; padding:.8rem 0; }
+.visual-section summary { cursor:pointer; color:#244f85; }
+.mason-lab { display:grid; grid-template-columns:1.2fr 1fr; gap:1.4rem; margin:1rem 0; align-items:center; }
+.mason-lab svg { width:100%; height:auto; background:#f3f7fa; border:1px solid #dbe3ea; }
+.mason-controls label { display:block; margin:0 0 .8rem; }
+.mason-controls input { width:100%; accent-color:#247f86; }
+.mason-controls button { font:inherit; font-size:.95rem; color:#244f85; background:#fff; border:1px solid #9daec1; border-radius:3px; padding:.35rem .6rem; cursor:pointer; margin-top:.7rem; }
+.mason-controls output { font-weight:bold; color:#244f85; }
+.mason-controls p { font-size:.95rem; }
+.visual-references { font-size:.9rem; padding-left:1.2rem; }
+.visual-references li { margin:.5rem 0; }
+@media(max-width:1000px) and (min-width:721px){ .visual-grid { gap:.85rem; } }
+@media(max-width:650px){ .visual-grid { grid-template-columns:1fr; gap:1.5rem; } .mason-lab { grid-template-columns:1fr; } .visual-card p { font-size:1rem; } }
+@media print { .visual-card { break-inside:avoid; } .mason-controls { display:none; } }
+
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -68,6 +97,9 @@
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#publications">Publications</a></li>
+          <li><a href="#geometry">Geometry</a></li>
+          <li><a href="#mason">Euler’s problem</a></li>
+          <li><a href="#places">Hometown</a></li>
           <li><a href="#teaching">Teaching</a></li>
           <li><a href="#links">Links</a></li>
         </ul>
@@ -96,11 +128,25 @@
 
 <p>
   My given name is Hongbin (洪斌). Hong (洪) comes from the Hong River,
-  a major tributary of the Huai River, beside which my mother's family
+  in the Huai River basin, beside which my mother's family
   lived. Bin (斌) combines the characters wen (文, literary learning)
   and wu (武, martial ability).
 </p>
       
+<section class="visual-section" aria-labelledby="places" id="places-section">
+<h2 id="places">Rivers and my hometown</h2>
+<p class="visual-intro">The Hong River connects my name with my family’s landscape. A regional map traces its connection to the Huai River and shows the surrounding prefecture-level cities; photographs show the Huai at Bengbu and my hometown of Xiping.</p><div class="visual-grid"><figure class="visual-card">
+<a class="visual-frame" href="assets/hong-river-map.png" target="_blank" rel="noopener" aria-label="Open image: The Hong River 洪河"><img src="assets/hong-river-map.png" alt="Map of prefecture-level cities around the Hong River, with Xiping marked inside Zhumadian. The Xiaohong River and Ru River meet at Bantai in Xincai, forming the Hong River, which joins the Huai River at Honghekou. Selected river reaches are shown." loading="lazy" decoding="async" width="1200" height="800"></a>
+<figcaption><h3>The Hong River 洪河</h3><p>The Xiaohong River and the Ru River meet at Bantai in Xincai County. Their combined flow forms the Hong River, also called the Dahong River, which joins the Huai at Honghekou. The map marks Xiping within Zhumadian and shows the surrounding prefecture-level cities. Hong (洪) is the first character of my given name.</p><p class="credit">Boundaries: <a href="https://help.aliyun.com/zh/datav/datav-7-0/user-guide/datav-geoatlas-widgets/">DataV.GeoAtlas / AMap</a>. Rivers: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, via <a href="https://waterwaymap.org/">WaterwayMap.org</a>. Selected river reaches.</p></figcaption>
+</figure>
+<figure class="visual-card">
+<a class="visual-frame" href="assets/huai-river.jpg" target="_blank" rel="noopener" aria-label="Open image: The Huai River 淮河"><img src="assets/huai-river.jpg" alt="Photograph of the Huai River at Bengbu, showing bridges and both urban banks." loading="lazy" decoding="async" width="1200" height="800"></a>
+<figcaption><h3>The Huai River 淮河</h3><p>The Huai is one of the great rivers of central China, flowing east from Henan through Anhui to Jiangsu. This view of the river at Bengbu places the waterways of my hometown within a much larger landscape.</p><p class="credit"><a href="https://www.thepaper.cn/newsDetail_forward_19142399" target="_blank" rel="noopener noreferrer">Photo: Chen Ang (陈昂), via Bengbu / The Paper (2022).</a></p></figcaption>
+</figure>
+<figure class="visual-card">
+<a class="visual-frame" href="assets/xiping.jpg" target="_blank" rel="noopener" aria-label="Open image: Xiping, Henan 西平"><img src="assets/xiping.jpg" alt="Photograph of a landscaped waterway in Xiping, with flowering trees and the town skyline." loading="lazy" decoding="async" width="1200" height="800"></a>
+<figcaption><h3>Xiping, Henan 西平</h3><p>I come from Xiping County, part of Zhumadian City in Henan. Its rivers, cultivated plains and town life form the landscape of my hometown. In spring, flowering trees line many of its riverside walks.</p><p class="credit"><a href="https://www.sohu.com/a/738628831_121375869" target="_blank" rel="noopener noreferrer">Source: Henan Daily, via Sohu (2023).</a></p></figcaption>
+</figure></div></section>
       <section aria-labelledby="about">
         <h2 id="about">About me</h2>
         <p>
@@ -119,6 +165,56 @@
         </p>
       </section>
 
+<section class="visual-section" aria-labelledby="geometry">
+<h2 id="geometry">Soap films, bubbles and area</h2>
+<p class="visual-intro">Everyday films reveal a central theme of geometric analysis: how a boundary, a constraint or an energy selects a shape.</p><div class="visual-grid"><figure class="visual-card">
+<a class="visual-frame" href="assets/planar-film.png" target="_blank" rel="noopener" aria-label="Open image: A flat soap film"><img src="assets/planar-film.png" alt="Mathematical rendering of a planar disk spanning a circular wire." loading="lazy" decoding="async" width="1200" height="800"></a>
+<figcaption><h3>A flat soap film</h3><p>A film spanning a circular wire can form a flat disk. The disk is an area minimizer for that boundary; orthogonal projection onto its plane gives a direct geometric proof.</p><p class="credit">Mathematical rendering · fixed boundary</p></figcaption>
+</figure>
+<figure class="visual-card">
+<a class="visual-frame" href="assets/catenoid-film.png" target="_blank" rel="noopener" aria-label="Open image: A soap-film catenoid"><img src="assets/catenoid-film.png" alt="Exact parametrized catenoid spanning two coaxial circular rings." loading="lazy" decoding="async" width="1200" height="800"></a>
+<figcaption><h3>A soap-film catenoid</h3><p>Two coaxial rings can support a catenoid-shaped soap film. Its mean curvature is zero. Whether a particular catenoid is stable or globally minimizing requires more than the minimal-surface equation.</p><p class="credit">Mathematical rendering · zero mean curvature</p></figcaption>
+</figure>
+<figure class="visual-card">
+<a class="visual-frame" href="assets/soap-bubble.png" target="_blank" rel="noopener" aria-label="Open image: A bubble holds a volume"><img src="assets/soap-bubble.png" alt="Mathematical rendering of a sphere, illustrating a bubble with fixed enclosed volume." loading="lazy" decoding="async" width="1200" height="800"></a>
+<figcaption><h3>A bubble holds a volume</h3><p>A spherical bubble minimizes area at fixed enclosed volume. Its nonzero constant mean curvature reflects the pressure difference. It illustrates a constrained variational problem.</p><p class="credit">Mathematical rendering · fixed enclosed volume</p></figcaption>
+</figure></div>
+<p class="math-note"><strong>Minimal, stable, minimizing.</strong> Zero mean curvature is a first-variation condition; stability concerns the second variation; area minimization compares all admissible competitors. A physical soap film may settle into a local energy minimum.</p>
+</section><section class="visual-section" aria-labelledby="mason">
+<h2 id="mason">Mason’s transition in Euler’s problem</h2>
+<p class="visual-intro">Euler’s weighted-length problem asks for a curve of least moment of inertia. Mason studied its minimizers in 1906. For density |x|², the critical opening angle is 60°.</p>
+<p class="equation"><i>I</i>(γ) = ∫<sub>γ</sub> |x|² ds, &nbsp; δ = ∠AOB, &nbsp; |OA| = |OB| = 1.</p><div class="visual-grid"><figure class="visual-card">
+<a class="visual-frame" href="assets/mason-50.png" target="_blank" rel="noopener" aria-label="Open image: Before the critical angle"><img src="assets/mason-50.png" alt="At a 50 degree opening, the minimizing curve bends towards the origin but avoids it." loading="lazy" decoding="async" width="1200" height="800"></a>
+<figcaption><h3>Before the critical angle</h3><p>At δ = 50°, the minimizer is a smooth curve avoiding O. The radial weight makes travel near O less costly. A and B both lie on the unit circle.</p><p class="credit">Exact curve · δ < 60°</p></figcaption>
+</figure>
+<figure class="visual-card">
+<a class="visual-frame" href="assets/mason-60.png" target="_blank" rel="noopener" aria-label="Open image: At the critical angle"><img src="assets/mason-60.png" alt="At a 60 degree opening, the minimizer is the broken radial path A to O to B." loading="lazy" decoding="async" width="1200" height="800"></a>
+<figcaption><h3>At the critical angle</h3><p>At δ = 60°, the minimizing path reaches O and consists of two radial segments. The limiting curve has a corner at the point where the density vanishes.</p><p class="credit">Exact curve · δ = 60°</p></figcaption>
+</figure>
+<figure class="visual-card">
+<a class="visual-frame" href="assets/mason-80.png" target="_blank" rel="noopener" aria-label="Open image: Beyond the critical angle"><img src="assets/mason-80.png" alt="At an 80 degree opening, the broken radial path through the origin remains minimizing." loading="lazy" decoding="async" width="1200" height="800"></a>
+<figcaption><h3>Beyond the critical angle</h3><p>At δ = 80°, the path A–O–B remains minimizing. Its weighted length is 2/3. The change at 60° concerns regularity and the type of minimizer.</p><p class="credit">Exact curve · δ > 60°</p></figcaption>
+</figure></div>
+<p class="math-note">The admissible class here includes rectifiable curves through the origin. The optimal curves approach the broken radial path continuously as δ increases to 60°. The transition is a loss of smoothness, rather than a jump in their location or in the minimum energy.</p>
+<details><summary>Explore the angle and the exact formula</summary>
+<div class="mason-lab">
+<svg viewBox="0 0 480 320" role="img" aria-labelledby="mason-live-title"><title id="mason-live-title">Minimizing curve for Euler’s weighted-length problem</title><path id="live-circle" d="M 80,260 A 160,160 0 0 1 400,260" fill="none" stroke="#d7e2ec"/><path id="live-rays" fill="none" stroke="#aebcc9" stroke-dasharray="5 5"/><path id="live-curve" fill="none" stroke="#247f86" stroke-width="4" stroke-linejoin="round"/><circle id="live-a" r="4" fill="#244f85"/><circle id="live-b" r="4" fill="#244f85"/><circle cx="240" cy="260" r="4" fill="#ac763d"/><text x="240" y="288" text-anchor="middle" fill="#ac763d" font-size="18">O</text><text id="live-angle" x="25" y="34" fill="#244f85" font-size="22">δ = 50°</text></svg>
+<div class="mason-controls"><label for="mason-angle">Opening angle: <output id="mason-angle-value" for="mason-angle">50°</output></label><input id="mason-angle" type="range" min="10" max="150" value="50" step="1"><button type="button" id="critical-angle">Set the critical angle: 60°</button><p id="mason-state" aria-live="polite">Smooth minimizer (δ &lt; 60°).</p><p>Minimum energy: <output id="mason-energy">0.643951</output></p></div>
+</div>
+<p>For δ &lt; π/3, the symmetric minimizer satisfies r³ cos(3θ) = cos(3δ/2), with −δ/2 ≤ θ ≤ δ/2. Here θ is measured from the angle bisector. The minimum energy is (2/3) sin(3δ/2). For δ ≥ π/3, it is 2/3.</p>
+<p>The change of variables ρ = r³/3, φ = 3θ turns the weighted line element into the Euclidean line element on a flat cone of total angle 6π. The angular coordinate must remain unwrapped; identifying it modulo 2π would give incorrect minimizers.</p>
+</details>
+<p>My research studies higher-dimensional weighted area problems, including the stability and minimizing properties of cones: <a href="https://doi.org/10.1007/s00208-024-02970-1">Cui–Xu, <i>Mathematische Annalen</i> (2025)</a>.</p>
+<details><summary>Mathematical references and image credits</summary>
+<ul class="visual-references">
+<li>M. Mason, <i>Curves of Minimum Moment of Inertia with Respect to a Point</i>, Annals of Mathematics 7 (1906), 165–172. <a href="https://www.jstor.org/stable/1967249">Original paper</a>.</li>
+<li>U. Dierkes and G. Huisken, <i>The n-dimensional analogue of a variational problem of Euler</i>, Math. Ann. 389 (2024), 3841–3863. <a href="https://doi.org/10.1007/s00208-023-02726-3">Journal</a>.</li>
+<li>U. Dierkes and R. López, <i>Axisymmetric stationary surfaces for the moment of inertia</i> (2026), introduction. <a href="https://doi.org/10.1017/prm.2025.10110">Journal</a>.</li>
+<li>H. Cui and X. Xu, <i>On Euler–Dierkes–Huisken variational problem</i>, Math. Ann. 391 (2025), 2087–2120. <a href="https://arxiv.org/abs/2404.05132">arXiv</a>.</li>
+<li><a href="https://www.maths.cam.ac.uk/features/less-more-quest-minimal-surfaces">University of Cambridge: soap films and minimal surfaces</a>.</li>
+<li>Photographic sources are linked under each photograph. The regional map uses DataV.GeoAtlas / AMap administrative boundaries and OpenStreetMap river geometry, aligned to the boundary data’s coordinate system. It displays prefecture-level divisions and selected river reaches, omitting upper reaches, diversion channels and minor tributaries. Xiping is marked as a county town within Zhumadian. River connections were cross-checked against <a href="https://www.chinawater.com.cn/df/hn/202310/t20231028_872074.html">China Water</a>. The mathematical diagrams were drawn from explicit formulas for this page.</li>
+</ul></details>
+</section>
       <section aria-labelledby="publications">
         <h2 id="publications">Publications and Preprints</h2>
 
@@ -245,8 +341,31 @@
       </section>
 
       <!-- 内容更新后，可手动修改下方日期。 -->
-      <footer>Last updated: November 23, 2026.</footer>
+      <footer>Last updated: November 25, 2026.</footer>
     </main>
   </div>
+<script>
+(() => {
+  const slider=document.getElementById('mason-angle'); if(!slider) return;
+  const pt=(x,y)=>[240+160*x,260-160*y];
+  const path=ps=>ps.map((p,i)=>(i?'L':'M')+pt(p[0],p[1]).map(x=>x.toFixed(3)).join(',')).join(' ');
+  function update(){
+    const deg=Number(slider.value), d=deg*Math.PI/180, ex=Math.sin(d/2), ey=Math.cos(d/2);
+    const endpoints=[[-ex,ey],[ex,ey]], radial=[endpoints[0],[0,0],endpoints[1]];
+    let points=radial;
+    if(deg<60){points=[];const u=Math.cos(1.5*d),s=Math.sin(1.5*d);for(let i=0;i<=500;i++){const v=(-1+2*i/500)*s,theta=Math.atan2(v,u)/3,r=Math.cbrt(Math.hypot(u,v));points.push([r*Math.sin(theta),r*Math.cos(theta)]);}}
+    document.getElementById('live-curve').setAttribute('d',path(points));
+    document.getElementById('live-rays').setAttribute('d',path(radial));
+    ['a','b'].forEach((id,i)=>{const p=pt(...endpoints[i]),e=document.getElementById('live-'+id);e.setAttribute('cx',p[0]);e.setAttribute('cy',p[1]);});
+    document.getElementById('mason-angle-value').value=deg+'°';
+    document.getElementById('live-angle').textContent='δ = '+deg+'°';
+    document.getElementById('mason-state').textContent=deg<60?'Smooth minimizer (δ < 60°).':deg===60?'Critical angle: the minimizer reaches O.':'Broken radial minimizer (δ > 60°).';
+    document.getElementById('mason-energy').value=(deg<60?2/3*Math.sin(1.5*d):2/3).toFixed(6);
+  }
+  slider.addEventListener('input',update);
+  document.getElementById('critical-angle').addEventListener('click',()=>{slider.value=60;update();});
+  update();
+})();
+</script>
 </body>
 </html>
